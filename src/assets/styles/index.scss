@@ -1,0 +1,534 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+@import './form.scss';
+@import './table.scss';
+@import './descriptions.scss';
+
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  font-size: 18px;
+  //background-color: #F0F2F5;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#cisdi-eap-platform {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式、
+.main-container {
+  box-sizing: border-box;
+  //padding: 20px;
+  height: calc(100% - 150px);
+  overflow-y: auto;
+}
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+/*公共滚动样式*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #CCCCCC;
+}
+//设置面板的高度
+.panel-height {
+  min-height: 100%;
+  overflow: auto;
+  border-radius: 4px;
+}
+
+//添加flex布局
+.flex-row {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-row-center {
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+}
+
+.flex-colum-center {
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+}
+
+.flex-align-end {
+  align-items: flex-end;
+}
+
+.flex-between {
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+}
+
+.flex-end{
+  justify-content: flex-end;
+}
+
+.flex-around {
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+.flex1{
+  flex: 1;
+}
+.flex-nowrap{
+  flex-wrap: nowrap;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+//头部title的样式
+.header-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  height: 50px;
+  padding: 0 20px;
+  border-bottom: 1px solid #E6E6E6;
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+//二级标题
+.header-subtitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 14px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333333;
+  position: relative;
+}
+.header-subtitle::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 4px;
+  height: 16px;
+  background: #0689FF;
+  border-radius: 1px;
+}
+// 表单
+.basic-details {
+  width: 100%;
+  display: flex;
+}
+.font-14{
+  font-size: 14px;
+}
+.font-16{
+  font-size: 16px;
+}
+.font-20{
+  font-size: 20px;
+}
+.bg-ff{
+  background: #ffffff;
+}
+.mar-t-20 {
+  margin-top: 20px;
+}
+.mar-r-6{
+  margin-right: 6px;
+}
+.mar-r-4{
+  margin-right: 4px;
+}
+.mar-r-16{
+  margin-right: 16px;
+}
+.mar-r-18{
+  margin-right: 18px;
+}
+.mar-r-20 {
+  margin-right: 20px;
+}
+.mar-l-8{
+  margin-left: 8px;
+}
+.mar-l-10{
+  margin-left: 10px;
+}
+.mar-l-12 {
+  margin-left: 12px;
+}
+.mar-l-16{
+  margin-left: 16px;
+}
+.mar-l-20 {
+  margin-left: 20px;
+}
+.mar-b-20{
+  margin-bottom: 20px;
+}
+.mar-b-8{
+  margin-bottom: 8px;
+}
+.mar-b-16{
+  margin-bottom: 16px;
+}
+.pad-20 {
+  padding: 20px;
+}
+.padd-l-12{
+  padding-left: 12px;
+}
+.padd-rl-20{
+  padding: 0 20px 0 20px;
+}
+.padd-trl-20{
+  padding: 20px 20px 0 20px;
+}
+.padd-b-30{
+  padding-bottom: 30px;
+}
+.padd-b-20{
+  padding-bottom: 20px;
+}
+.marg-trl-20{
+  margin: 20px 20px 0 20px;
+}
+.icon-blue{
+  cursor: pointer;
+  color: #0F8CFA;
+}
+.icon-gray{
+  color: rgba(34, 34, 34, 0.35) !important;
+  pointer-events: none;
+}
+.post-r{
+  position: relative;
+}
+.post-r-l-8{
+  position: relative;
+  left: 8px;
+}
+
+.color{
+  color: #458EED;
+}
+.posr-t-1{
+  position: relative;
+  top: 1px;
+}
+//点点
+.dot-dot{
+  text-overflow :ellipsis;
+  white-space :nowrap;
+  overflow : hidden;
+}
+//下划线
+.text-underline{
+  color: #0F8CFA;
+  text-decoration: underline;
+}
+//取消按钮
+.btn-cancel{
+  background: #F3F4F6;
+  color: #222;
+  border: navajowhite;
+}
+//删除
+.btn-del{
+  background: #F3F4F6;
+  color: rgba(34, 34, 34, 0.4);
+  border: none;
+}
+.btn-del-active{
+  background: #FF3333;
+  color: #ffffff;
+  border: none;
+}
+.btn-del-active:hover{
+  background: rgba(255,51,51,0.8);
+  color: #ffffff;
+  border: none;
+}
+// 阴影
+.box-show {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 4px;
+}
+//字体图片-灰
+.icon-no{
+  color: rgba(34, 34, 34, 0.35);
+}
+.icon_search{
+  color: rgba(34, 34, 34, 0.55);
+}
+//圆角
+.border-r4{
+  border-radius: 4px;
+}
+
+// 提交按钮的固定
+  .button-group {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    height: 54px;
+    padding: 12px 20px;
+    text-align: right;
+    box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .el-drawer__header{
+    background-color: #EDEFF3;
+    height: 46px;
+    line-height: 46px;
+    padding: 20px;
+  }
+  /*1.显示滚动条：当内容超出容器的时候，可以拖动：*/
+.el-drawer__body {
+  overflow: auto;
+}
+:focus{
+  outline:0;
+}
+// 表格行高亮样式
+.el-table .table-item-active{
+  background: #F56C6C !important;
+}
+// 红色字体颜色
+.danger{
+  color: #F56C6C;
+}
+
+.color_blue{
+  color: #0689FF;
+}
+.color_gray{
+  color: rgba(34, 34, 34, 0.4);
+}
+
+// 状态颜色
+.statusSucceed {
+  color: #52C41A;
+}
+.statusError {
+  color: #FF3333;
+}
+.statusDefault {
+  color: #0689FF;
+}

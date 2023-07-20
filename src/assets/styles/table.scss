@@ -1,0 +1,122 @@
+/**
+* Create by: zhangJie
+* Time: 2020/12/3
+* Name: 表格样式
+* */
+.tableNo{
+  &:before{
+    height: 0px !important;
+  }
+  tr:last-child{
+    .is-leaf,  td{
+      border-bottom: none !important;
+    }
+  }
+}
+.el-table {
+  //border: 1px solid #EAEAEA;
+  // border-bottom: none;
+  th {
+    padding: 0;
+    //border-radius: 4px 4px 0 0;
+    background: #EDEFF3;
+    color: #333;
+  }
+  th:first-child {
+    border-radius: 4px 0 0 0;
+  }
+  th:last-child {
+    border-radius: 0 4px 0 0;
+  }
+  td {
+    line-height: 54px;
+    padding: 0;
+    background: transparent!important;
+    // border-bottom: 1px solid #EAEAEA;
+  }
+  tr {
+    height: 54px!important;
+    font-size: 14px;
+    //&:nth-of-type(2n){
+    //  background: #FAFBFE;
+    //}
+  }
+  //tr:last-child{
+  //  .is-leaf,  td{
+  //    border-bottom: none !important;
+  //  }
+  //}
+  .el-input,.el-select {
+    width: 240px;
+  }
+  .el-table__body .hover-row{
+    background-color: #E6F7FF;
+  }
+}
+.el-table__expanded-cell[class*=cell] {
+  padding: 0;
+}
+// 嵌套表格的背景冲突
+.el-table__empty-block {
+  min-height: 54px;
+}
+.el-table__empty-text {
+  line-height: 54px;
+}
+.el-tooltip__popper {
+  max-width: 50vw!important;
+}
+// 高亮当前选中行
+.current-row > td {
+  background: #edf6ff !important;
+  color: #999;
+}
+// 表格 fix 样式消除边线
+.el-table__fixed::before, .el-table__fixed-right::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  z-index: 4;
+}
+//消除表格错位
+body .el-table th.gutter {
+  display: table-cell!important;
+}
+/*公共滚动样式*/
+//::-webkit-scrollbar {
+//  width: 5px;
+//  height: 7px;
+//}
+//
+//::-webkit-scrollbar-thumb {
+//  border-radius: 5px;
+//  background: #CCCCCC;
+//}
+
+//滚动条的宽度
+::-webkit-scrollbar {
+  //width: 10px;
+  height: 6px !important;
+}
+//滚动条的滑块
+::-webkit-scrollbar-thumb {
+  background: #A1A1A1 !important;
+  border-radius: 4px !important;
+}
+/*滚动条里面轨道*/
+::-webkit-scrollbar-track {
+  background: #F5F6FA;;
+}
+// 溢出三个点
+.el-table td div{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.el-table th.el-table__cell.is-leaf, .el-table td.el-table__cell{
+  background-color: #EDEFF3;
+}

@@ -1,4 +1,4 @@
-# vue2-ts
+# vue2-html-sfc-compiler
 
 ## Project setup
 ```

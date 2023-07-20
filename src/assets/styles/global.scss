@@ -1,0 +1,118 @@
+/* 全局css变量 */
+$--color-primary: #409eff;
+
+.primary-color {
+  color: $--color-primary;
+}
+
+.background-opacity {
+  background: rgb(64 158 255 / 60%);
+}
+
+.page-widget-list {
+  .ghost {
+    box-sizing: border-box;
+    height: 3px;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0;
+    background: $--color-primary;
+    border: 2px solid $--color-primary;
+    outline-width: 0;
+    content: '';
+  }
+}
+
+.el-form-item--medium {
+  .el-radio {
+    line-height: 36px !important;
+  }
+
+  .el-rate {
+    margin-top: 8px;
+  }
+}
+
+.el-form-item--small {
+  .el-radio {
+    line-height: 32px !important;
+  }
+
+  .el-rate {
+    margin-top: 6px;
+  }
+}
+
+.el-form-item--mini {
+  .el-radio {
+    line-height: 28px !important;
+  }
+
+  .el-rate {
+    margin-top: 4px;
+  }
+}
+
+.el-card {
+  margin: 5px 0;
+}
+// 解决设计页面和预览页面,element的栅格布局因高度不固定,导致排列错乱
+// 原因:布局中使用el-col标签布局，el-row自带浮动样式（float:left）,需要去掉浮动
+.form-widget-container,
+.render-item {
+  [class*='el-col-'] {
+    display: inline-block;
+    float: none;
+    box-sizing: border-box;
+    vertical-align: top; // 一行排多个//高度不一致，靠顶部对齐
+  }
+}
+
+input[type='password']::-ms-reveal {
+  /* 隐藏IE/Edge原生的密码查看按钮 */
+  display: none;
+}
+
+/* 滚动条样式 begin */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  width: 8px;
+  background: rgba(#101f1c, 0.1);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 28px;
+  background-color: rgba(#101f1c, 0.35);
+  background-clip: padding-box;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(#101f1c, 0.85);
+}
+
+* {
+  //Firefox浏览器滚动条样式
+  scrollbar-color: #e5e5e5 #f7f7f9; //滚动条轨道颜色、滚动条滑块的颜色
+  scrollbar-width: thin; //thin模式下滚动条两端的三角按钮会消失
+}
+
+.vxe-select--panel.is--transfer {
+  z-index: 9999 !important;
+}
+
+/*
+body {//IE浏览器滚动条样式
+  scrollbar-shadow-color: #e5e5e5;
+  scrollbar-face-color: #e5e5e5;
+  scrollbar-base-color: #ffffff;
+  scrollbar-arrow-color: #444040;
+}
+*/
+
+/* 滚动条样式 end */

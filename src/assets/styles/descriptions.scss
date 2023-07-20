@@ -1,0 +1,24 @@
+/**
+* Name: descriptions描述列表
+* */
+.el-descriptions-item__label.is-bordered-label {
+  box-sizing: border-box !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right !important;
+  font-size: 14px;
+  font-family: PingFangSC-Regular,
+  PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  background-color: #FAFAFA;
+}
+.el-descriptions {
+    // height: 48px;
+    // line-height: 48px;
+}
+.el-descriptions__table {
+  height: 48px;
+  line-height: 48px;
+}

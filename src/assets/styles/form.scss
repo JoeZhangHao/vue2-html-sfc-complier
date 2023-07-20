@@ -1,0 +1,50 @@
+/**
+* Create by: zhangJie
+* Time: 2020/12/3
+* Name: form表单的样式
+* */
+.text-label{
+  display: inline-block;
+  min-width: 100px;
+  text-align: right;
+  font-size: 14px;
+  color: #606266;
+  font-weight: 700;
+  padding: 0 12px 0 0;
+}
+.option-files .upload-title {
+  display: inline-block;
+  min-width: 100px;
+  text-align: right;
+  font-size: 14px;
+  color: #606266;
+  font-weight: 700;
+  padding: 0 12px 0 0;
+}
+.el-form{
+  .el-form-item__label{
+    font-size: 14px;
+    font-weight: 400;
+    color: #222;
+    font-family: PingFangSC-Regular, PingFang SC;
+    padding: 0 12px 0 0;
+  }
+  //输入框的宽度
+  .el-input {
+    //width: 240px!important;
+  }
+  .el-textarea__inner{
+    //width:600px;
+    //height: 120px;
+  }
+  //禁止输入时的颜色
+  .el-textarea.is-disabled .el-textarea__inner{
+    background: #F5F5F5;
+    color: #606266;
+  }
+  //禁止输入时的颜色
+  .el-input.is-disabled .el-input__inner {
+    background: #F5F5F5;
+    color: #606266;
+  }
+}
